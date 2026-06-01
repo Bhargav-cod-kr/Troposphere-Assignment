@@ -1,4 +1,5 @@
 const express = require("express");
+const discountRoutes = require("./routes/discountRoutes");
 
 const app = express();
 
@@ -9,6 +10,8 @@ app.get("/", (req, res) => {
     message: "Config-Driven Discount Engine API is running",
   });
 });
+
+app.use("/", discountRoutes);
 
 const PORT = 3000;
 
